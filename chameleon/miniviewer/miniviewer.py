@@ -227,10 +227,10 @@ def queue_position_thread():
 def main(data_path, model_size):
     model_path = Path('/vol/models/chameleon/data')
 
-    model_path = str(data_path / "models" / model_size)
-    tokenizer_path = str(data_path / "tokenizer/text_tokenizer.json")
-    vqgan_cfg_path = str(data_path / "tokenizer/vqgan.yaml")
-    vqgan_ckpt_path = str(data_path / "tokenizer/vqgan.ckpt")
+    model_path = (data_path / "models" / model_size)
+    tokenizer_path = (data_path / "tokenizer/text_tokenizer.json")
+    vqgan_cfg_path = (data_path / "tokenizer/vqgan.yaml")
+    vqgan_ckpt_path = (data_path / "tokenizer/vqgan.ckpt")
 
     if not os.path.exists(model_path):
         raise ValueError(
