@@ -15,7 +15,6 @@ import click
 import torch
 from flask import Flask, request
 from flask_socketio import SocketIO
-
 from chameleon.inference.chameleon import ChameleonInferenceModel, Options, TokenManager
 
 
@@ -226,7 +225,7 @@ def queue_position_thread():
     "--model-size", type=click.Choice(["7b", "30b"], case_sensitive=False), default="7b"
 )
 def main(data_path, model_size):
-    data_path = Path(data_path)
+    model_path = Path('/vol/models/chameleon/data')
 
     model_path = str(data_path / "models" / model_size)
     tokenizer_path = str(data_path / "tokenizer/text_tokenizer.json")
